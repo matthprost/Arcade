@@ -1,5 +1,5 @@
 //
-// Ncurses.cpp for cpp_arcade in /home/lopez_i/cpp_arcade/Ncurses.cpp
+// NcursesController.cpp for cpp_arcade in /home/lopez_i/cpp_arcade/NcursesController.cpp
 //
 // Made by Loïc Lopez
 // Login   <loic.lopez@epitech.eu>

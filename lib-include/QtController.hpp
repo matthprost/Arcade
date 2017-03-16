@@ -7,3 +7,15 @@
 // Started on  jeu. mars 16 15:07:40 2017 Loïc Lopez
 // Last update jeu. mars 16 15:07:40 2017 Loïc Lopez
 //
+
+#include "interfaces/IQtController.hpp"
+
+#ifndef QTCONTROLLER_HPP__
+# define QTCONTROLLER_HPP__
+
+class QtController : public IQtController
+{
+
+};
+
+#endif /* QTCONTROLLER_HPP__ */
