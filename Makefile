@@ -8,26 +8,44 @@
 ## Last update Mon Mar  6 10:31:07 2017 Loic Lopez
 ##
 
+ECHO	=	/bin/echo -e
+
+DEFAULT	=	"\033[00m"
+GREEN	=	"\033[0;32m"
+TEAL	=	"\033[1;36m"
+RED	=	"\033[5;31m"
+
 CC              = g++
 
-RM              = rm -rf
+RM              = rm -f
 
-CFLAGS          = -std=c++11 -W -Wall -Wextra -Werror -Iinclude
+CXXFLAGS 	= -Wall -Wextra -Werror -I./include
 
 NAME            = arcade
 
 SRCS            = sources/main.cpp
 
-OBJS            = $(SRCS:.c=.o)
+OBJS            = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
-clean:
-	$(RM) $(OBJS)
+$(NAME)	:	$(OBJS)
+	@$(CC) $(OBJS)  $(CXXFLAGS) -o $(NAME) && \
+	$(ECHO) $(GREEN) "[OK]"$(TEAL)"  BUILD :" $(NAME) $(DEFAULT)  || \
+	$(ECHO) $(RED) "[ERROR]" $(TEAL) $(OBJDUMP) $(DEFAULT)
+clean	:
+	@rm -f $(OBJS) && \
+	$(ECHO) $(GREEN) "[OK] remove" $(TEAL) $(OBJS) $(DEFAULT) || \
+	$(ECHO) $(RED) "[ERROR] doesn't exist" $(TEAL) $(OBJS) $(DEFAULT)
 
-fclean: clean
-	$(RM) $(NAME)
+fclean	:	clean
+	@rm -f $(NAME) && \
+	$(ECHO) $(GREEN) "[OK] remove" $(TEAL) $(NAME) $(DEFAULT) || \
+	$(ECHO) $(RED) "[ERROR] doesn't exist" $(TEAL) $(NAME) $(DEFAULT)
 
-re: fclean all
+re	:	fclean all
+
+.cpp.o	:
+	@$(CC) $(CXXFLAGS) -c -o $@ $< && \
+	$(ECHO) $(GREEN) "[OK]" $(TEAL) $< "--->" $@ $(DEFAULT) || \
+	$(ECHO) $(RED) "[ERROR] doesn't exist" $(TEAL) $^ $(DEFAULT)

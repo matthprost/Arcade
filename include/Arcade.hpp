@@ -8,10 +8,9 @@
 // Last update Mon Mar  6 10:30:52 2017 Loic Lopez
 //
 
-#include "Arcade.hpp"
+#ifndef ARCADE_HPP__
+# define  ARCADE_HPP__
 
-int	main(int ac, char **av)
-{
-  (void)ac;
-  (void)av;
-}
+#include "Protocol.hh"
+
+#endif /* ARCADE_HPP__ */
