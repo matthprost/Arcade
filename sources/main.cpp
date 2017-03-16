@@ -14,4 +14,5 @@ int	main(int ac, char **av)
 {
   (void)ac;
   (void)av;
+  std::cout << "salut" << std::endl;
 }

@@ -11,6 +11,7 @@
 #ifndef ARCADE_HPP__
 # define  ARCADE_HPP__
 
+#include <iostream>
 #include "Protocol.hh"
 
 #endif /* ARCADE_HPP__ */
