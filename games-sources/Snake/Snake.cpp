@@ -90,10 +90,6 @@ void			Snake::drawMap(ILibraryViewController *libraryInstance)
     libraryInstance->drawSquare(this->_snake.at(j).x, this->_snake.at(j).y, Color::RED);
 }
 
-void Snake::getInputs()
-{
-}
-
 void  Snake::wait_second()
 {
   clock_t   ticks1, ticks2;
